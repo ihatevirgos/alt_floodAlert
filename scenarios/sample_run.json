@@ -1,0 +1,8 @@
+{
+  "name": "Proposal sample run",
+  "description": "The 12-step run from the proposal's Sample Runs table. \"T\" is the 30-second timer event, not a reading.",
+  "events": [14.2, 14.6, 15.0, 15.6, "T", 15.9, 16.3, 18.1, 17.4, 15.5, 14.8, 14.6],
+  "expected_symbols": ["D", "L0", "L1", "R", "T", "L1", "L2", "L3", "L2", "L1", "D", "D"],
+  "expected_states": ["Normal", "Normal", "Prep", "Surge", "Silenced", "Recovery", "Silenced", "Forced", "Silenced", "Recovery", "Clearing", "Normal"],
+  "expected_outputs": ["MONITOR", "MONITOR", "ADVISE", "SURGE", "SILENT", "HOLD", "SILENT", "FORCED", "SILENT", "HOLD", "HOLD", "MONITOR"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Flash flood",
+  "description": "A sharp jump from Prep triggers Surge, the river keeps climbing past 18 m, then slowly recedes. A second surge while Silenced re-sounds the alarm.",
+  "events": [14.8, 15.2, 15.9, 16.4, "T", 17.0, 18.2, 17.6, 16.8, 17.4, "T", 16.5, 15.7, 14.9, 14.6],
+  "expected_states": ["Normal", "Prep", "Surge", "Surge", "Silenced", "Surge", "Forced", "Silenced", "Silenced", "Surge", "Silenced", "Silenced", "Recovery", "Clearing", "Normal"]
+}

@@ -1,0 +1,80 @@
+{
+  "_source": "Proposal No. 1, Tables 3a, 3b and 4. SMS templates use {h} (level, m) and {r} (rate, m/min).",
+  "lambda": {
+    "Normal": "MONITOR",
+    "Prep": "ADVISE",
+    "PrepClear": "ADVISE",
+    "Surge": "SURGE",
+    "Evac": "ALARM",
+    "Silenced": "SILENT",
+    "Forced": "FORCED",
+    "Recovery": "HOLD",
+    "Clearing": "HOLD"
+  },
+  "devices": ["display", "logger", "beacon", "siren", "voice", "sms_team", "sms_public"],
+  "outputs": {
+    "MONITOR": {
+      "display": "NORMAL: MONITORING",
+      "logger": "ON",
+      "beacon": "OFF",
+      "siren": "OFF",
+      "voice": "OFF",
+      "sms_team": null,
+      "sms_public": null
+    },
+    "ADVISE": {
+      "display": "PREP: RESPONDERS ALERTED",
+      "logger": "ON",
+      "beacon": "ON, slow flash",
+      "siren": "OFF",
+      "voice": "OFF",
+      "sms_team": "ADVISORY: Flood level at {h} m, preparation range. Standby for possible evacuation.",
+      "sms_public": null
+    },
+    "SURGE": {
+      "display": "RAPID RISE: EVACUATE NOW",
+      "logger": "ON",
+      "beacon": "ON, fast flash",
+      "siren": "ON, continuous",
+      "voice": "ON, rapid-rise evacuation announcement on loop",
+      "sms_team": "RAPID RISE ALERT: Level {h} m, rising at {r} m/min. Initiate immediate evacuation procedures.",
+      "sms_public": "FLOOD WARNING: Water levels are rising rapidly. Evacuate to higher ground immediately."
+    },
+    "ALARM": {
+      "display": "EVACUATE NOW",
+      "logger": "ON",
+      "beacon": "ON, fast flash",
+      "siren": "ON, continuous",
+      "voice": "ON, evacuation announcement on loop",
+      "sms_team": "EVACUATION ORDER: Level {h} m. Begin evacuation procedures now.",
+      "sms_public": "FLOOD EMERGENCY: Evacuate to higher ground immediately."
+    },
+    "SILENT": {
+      "display": "EVACUATION IN FORCE (ALARM SILENCED)",
+      "logger": "ON",
+      "beacon": "ON, fast flash",
+      "siren": "OFF",
+      "voice": "OFF",
+      "sms_team": "Siren and voice silenced. Evacuation order still in force. Level {h} m.",
+      "sms_public": "Evacuation order remains in effect. Do not return."
+    },
+    "FORCED": {
+      "display": "FORCED EVACUATION: LEVEL >= 18 m",
+      "logger": "ON",
+      "beacon": "ON, fast flash",
+      "siren": "ON, continuous",
+      "voice": "ON, forced-evacuation announcement on loop",
+      "sms_team": "FORCED EVACUATION: Level {h} m has reached or exceeded the 18 m critical threshold. Execute emergency evacuation procedures immediately.",
+      "sms_public": "MANDATORY EVACUATION ORDER: Critical flood level reached. Leave the affected area immediately and proceed to designated evacuation centers."
+    },
+    "HOLD": {
+      "display": "RECOVERY: ORDER IN FORCE",
+      "logger": "ON",
+      "beacon": "ON, slow flash",
+      "siren": "OFF",
+      "voice": "OFF",
+      "sms_team": null,
+      "sms_public": "Water level is falling. Remain evacuated until further notice."
+    }
+  }
+}

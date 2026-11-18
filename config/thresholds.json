@@ -1,0 +1,10 @@
+{
+  "_source": "Proposal No. 1, Table 5 and Limitations. Levels follow Marikina City's river alarm (15 / 16 / 18 m).",
+  "prep_level_m": 15.0,
+  "evac_level_m": 16.0,
+  "forced_level_m": 18.0,
+  "rapid_rise_m": 0.5,
+  "sample_interval_s": 60,
+  "timer_s": 30,
+  "timer_states": ["Surge", "Evac"]
+}

@@ -1,0 +1,17 @@
+{
+  "_source": "Proposal No. 1, Table 6. Every '-' (stay) cell is written out as a self-loop so the function is total.",
+  "initial_state": "Normal",
+  "states": ["Normal", "Prep", "PrepClear", "Surge", "Evac", "Silenced", "Forced", "Recovery", "Clearing"],
+  "alphabet": ["L0", "L1", "L2", "L3", "R", "D", "T"],
+  "delta": {
+    "Normal":    {"L0": "Normal",    "L1": "Prep",      "L2": "Evac",     "L3": "Forced",   "R": "Surge",    "D": "Normal",    "T": "Normal"},
+    "Prep":      {"L0": "PrepClear", "L1": "Prep",      "L2": "Evac",     "L3": "Forced",   "R": "Surge",    "D": "PrepClear", "T": "Prep"},
+    "PrepClear": {"L0": "PrepClear", "L1": "Prep",      "L2": "Evac",     "L3": "Forced",   "R": "Surge",    "D": "Normal",    "T": "PrepClear"},
+    "Surge":     {"L0": "Surge",     "L1": "Surge",     "L2": "Surge",    "L3": "Forced",   "R": "Surge",    "D": "Surge",     "T": "Silenced"},
+    "Evac":      {"L0": "Evac",      "L1": "Evac",      "L2": "Evac",     "L3": "Forced",   "R": "Evac",     "D": "Evac",      "T": "Silenced"},
+    "Silenced":  {"L0": "Recovery",  "L1": "Recovery",  "L2": "Silenced", "L3": "Forced",   "R": "Surge",    "D": "Recovery",  "T": "Silenced"},
+    "Forced":    {"L0": "Recovery",  "L1": "Recovery",  "L2": "Silenced", "L3": "Forced",   "R": "Forced",   "D": "Recovery",  "T": "Forced"},
+    "Recovery":  {"L0": "Recovery",  "L1": "Recovery",  "L2": "Silenced", "L3": "Forced",   "R": "Surge",    "D": "Clearing",  "T": "Recovery"},
+    "Clearing":  {"L0": "Recovery",  "L1": "Recovery",  "L2": "Silenced", "L3": "Forced",   "R": "Surge",    "D": "Normal",    "T": "Clearing"}
+  }
+}
